@@ -3,6 +3,9 @@ const app = express();
 const port = 9000;
 const expressHandlebars = require('express-handlebars');
 
+// directing app to assets folder for static files
+app.use(express.static('./assets'));
+
 // configuring handlebar as our template engine
 app.engine('hbs', expressHandlebars({
     defaultLayout: 'main',
