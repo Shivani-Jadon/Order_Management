@@ -15,7 +15,7 @@ order_data.sort( (a,b) => {
 
 console.log("loading routes");
 
-// request handler
+// request handler for home page
 router.get('/', (req, res) => {
     console.log(order_data);
 
@@ -23,5 +23,11 @@ router.get('/', (req, res) => {
         data : order_data
     });
 });
+
+// request handler to edit/view order
+router.get('/edit_data', (req, res) => {
+    res.render('editOrder')
+});
+
 
 module.exports = router;
