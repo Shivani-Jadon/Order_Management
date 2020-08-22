@@ -10,13 +10,13 @@ Tech Stack - HTML, CSS, JavaScript, NodeJs, Handlebars.js, Charts.js, Bootstrap
 4. Filter order report based on date.
 5. User can set start date and end date.
 
-### Dashboard View
+### Order Management View
 
 <img src = "/git_static/order_management.png">
 
-### Visualization Graph
+### Edit/View Order view
 
-<img src = "/git-static/order_edit.png">
+<img src = "/git_static/order_edit.png">
 
 
 ## How To Install.

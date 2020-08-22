@@ -35,6 +35,7 @@ router.get('/edit_data', (req, res) => {
         }
     } 
     res.render('editOrder',{
+        data : order_data,
         view_order : view_order_data
     })
 });

@@ -3,7 +3,7 @@
   <ul class="list-group list-group-flush">
     <li class="list-group-item">Order No. :- {{view_order.OrderNo}}</li>
     <li class="list-group-item">Order Date :- {{view_order.OrderDate}}</li>
-    <li class="list-group-item">Order Status :- {{view_order.OrderStatus}}</li>
+    <li class="list-group-item" id="status">Order Status :- {{view_order.OrderStatus}}</li>
     <li class="list-group-item">Order Quantity :- {{view_order.TotalQty}}</li>
     <li class="list-group-item">Order Amount :- {{view_order.TotalAmount}}</li>
   </ul>
@@ -57,3 +57,17 @@
     <button type="button" class="btn btn-secondary" id="reject-order" onclick="rejectOrder({{view_order.OrderNo}}); return false">Reject</button>
     <button type="button" class="btn btn-info" id="confirm-order" onclick="confirmOrder({{view_order.OrderNo}}); return false">Confirm</button>
 </div>
+
+<script>
+        let dataObj;
+        const dummyData = [];
+        {{!-- parsing through the fetched array of data --}}
+        {{#each data}}
+            dataObj={};
+            {{#each this}}
+                dataObj["{{@key}}"]="{{this}}";
+            {{/each}}
+            dummyData.push(dataObj);
+        {{/each}}
+        {{!-- console.log(dummyData); --}}
+</script>

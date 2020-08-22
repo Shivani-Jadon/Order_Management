@@ -1,6 +1,5 @@
 {
-    console.log("In script");
-
+    
     let today = new Date();
     let mm = today.getMonth()+1;
     let d = today.getDate();
@@ -17,7 +16,7 @@
             alert("Start Date must be less than End Date!!!!");
         }else{
             
-            console.log(dummyData);
+            // console.log(dummyData);
 
             $('#detailed-data').empty();
 
@@ -25,10 +24,7 @@
                
                 // getting start date in dd/mm/yyyy format
                 let formatted_date = dummyData[index].OrderDate.split('/').reverse().join('-');;
-                // console.log(formatted_date);
-
-                // console.log(formatted_date >= startDate);
-                // console.log(formatted_date <= endDate);
+                
                 if(formatted_date >= startDate && formatted_date<= endDate){
                         console.log(formatted_date);
                         let table_index = $("<th></th>").text(`${index}`);
