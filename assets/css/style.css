@@ -10,3 +10,23 @@ footer{
     height: 10vh;
     background: #343a40;
 }
+
+.card{
+    text-align: center;
+    font-weight: 700;
+}
+
+#data-table{
+    overflow-y: auto;
+    margin: 20px auto;
+}
+
+#btn-cont{
+    padding: 2%;
+    display: flex;
+    justify-content: center;
+}
+
+#btn-cont button{
+    margin: 10px 20px;
+}

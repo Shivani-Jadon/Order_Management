@@ -22,8 +22,9 @@
 </div>
 
 <br/>
-							
-<table class="table table-dark">
+
+<section id="data-table">
+    <table class="table table-dark">
   <thead>
     <tr>
       <th scope="col">ProductName</th>
@@ -49,3 +50,10 @@
     </tr>
    </tbody>
 </table> 
+</section>							
+
+
+<div id="btn-cont">
+    <button type="button" class="btn btn-secondary" id="reject-order" onclick="rejectOrder({{view_order.OrderNo}}); return false">Reject</button>
+    <button type="button" class="btn btn-info" id="confirm-order" onclick="confirmOrder({{view_order.OrderNo}}); return false">Confirm</button>
+</div>
