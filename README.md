@@ -1,5 +1,23 @@
 # Order_Management
 An application built using Handlebar template for making order management module where user can manage orders
+Tech Stack - HTML, CSS, JavaScript, NodeJs, Handlebars.js, Charts.js, Bootstrap
+
+## Basic Features.
+
+1. Look at the orders report.
+2. View individual order.
+3. Edit status of individual order.
+4. Filter order report based on date.
+5. User can set start date and end date.
+
+### Dashboard View
+
+<img src = "/git_static/order_management.png">
+
+### Visualization Graph
+
+<img src = "/git-static/order_edit.png">
+
 
 ## How To Install.
 
