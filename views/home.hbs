@@ -1,17 +1,17 @@
 {{!-- Row 1 :- date range filter --}}
 <section>
-    <form id="date-filter" onsubmit="filterDate()">
-    <div class="row">
-        <div  class="col-md-6 mb-3">
-            <label>Start Date</label>
-            <input name="start-date" type="date" class="form-control" placeholder="Start Date">
+    <form id="date=filter" onsubmit="filterDate(); return false">
+        <div class="form-group">
+            <label for="start-date">Start Date</label>
+            <input type="date" class="form-control" id="start-date" aria-describedby="start-date-help" required>
+            <small id="start-date-help" class="form-text text-muted">The data will be displayed from this date</small>
         </div>
-        <div  class="col-md-6 mb-3">
-            <label>End Date</label>
-            <input name="end-date" type="date" class="form-control" placeholder="End Date">
+        <div class="form-group">
+            <label for="end-date">End Date</label>
+            <input type="date" class="form-control" id="end-date" aria-describedby="end-date-help" max={new Date()} required>
+            <small id="end-date-help" class="form-text text-muted">The data will be displayed till this date</small>
         </div>
-    </div>
-    <button type="submit" for="data-filter" class="btn btn-primary">Display Data</button>
+        <button type="submit" class="btn btn-primary">Filter Data</button>
     </form>
 </section>
 
@@ -24,7 +24,7 @@
         <th scope="col"></th>
         <th scope="col">UserName</th>
         <th scope="col">OrderNo</th>
-        <th scope="col">OrderDetailed</th>
+        <th scope="col">OrderDate</th>
         <th scope="col">Status</th>
         <th scope="col">TotalAmount</th>
         <th scope="col">TotalQty</th>
@@ -33,6 +33,19 @@
     </thead>
 
     <tbody id="detailed-data">
+        {{#each data}}
+            <tr>
+                <th scope="row">{{@index}}</th>
+                <td>{{this.UserName}}</td>
+                <td>{{this.OrderNo}}</td>
+                <td>{{this.OrderDate}}</td>
+                <td>{{this.OrderStatus}}</td>
+                <td>{{this.TotalAmount}}</td>
+                <td>{{this.TotalQty}}</td>
+                <td><a href="#">View/Edit</a></td>
+            </tr>
+            
+        {{/each}}
     </tbody>
     </table>
 </section>

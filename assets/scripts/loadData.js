@@ -1,35 +1,56 @@
 {
     console.log("In script");
+
+    let today = new Date();
+    let mm = today.getMonth()+1;
+    let d = today.getDate();
+    let curr_date = [today.getFullYear(),mm<10?'0'+mm:mm,d<10?'0'+d:d].join('-');
+    
+    $('#start-date').attr('max',curr_date);
+    $('#end-date').attr('max',curr_date);
+   
     function filterDate(){
-        let startDate = $('#dat-filter').find('input[name="start-date"]').val();
-        let endDate = $('#dat-filter').find('input[name="end-date"]').val();
+        let startDate = $('#start-date').val();
+        let endDate = $('#end-date').val();
+
+        if(startDate > endDate){
+            alert("Start Date must be less than End Date!!!!");
+        }else{
+            
+            console.log(dummyData);
+
+            $('#detailed-data').empty();
+
+            for(let index=dummyData.length-1; index>=0; index--){
+               
+                // getting start date in dd/mm/yyyy format
+                let formatted_date = dummyData[index].OrderDate.split('/').reverse().join('-');;
+                // console.log(formatted_date);
+
+                // console.log(formatted_date >= startDate);
+                // console.log(formatted_date <= endDate);
+                if(formatted_date >= startDate && formatted_date<= endDate){
+                        console.log(formatted_date);
+                        let table_index = $("<th></th>").text(`${index}`);
+                        let table_data1 = $("<td></td>").text(`${dummyData[index].UserName}`);
+                        let table_data2 = $("<td></td>").text(`${dummyData[index].OrderNo}`);
+                        let table_data3 = $("<td></td>").text(`${dummyData[index].OrderDate}`);
+                        let table_data4 = $("<td></td>").text(`${dummyData[index].OrderStatus}`);
+                        let table_data5 = $("<td></td>").text(`${dummyData[index].TotalAmount}`);
+                        let table_data6 = $("<td></td>").text(`${dummyData[index].TotalQty}`);
+                        
+                        let anchor = $("<a></a>").attr('href','#').text("View/Edit");
+                        let table_data7 = $("<td></td>").append(anchor);
+
+                        let new_row = $("<tr></tr>").append(table_index, table_data1, table_data2, table_data3, table_data4, table_data5, table_data6, table_data7);
+                        $('#detailed-data').prepend(new_row);
+                }
+            }
+
+        }
 
         console.log("SD",startDate);
         console.log("SE",endDate);
     }
 
-    dummyData.sort( (a,b) => {
-        let parts = a.OrderDate.split('/');
-        const d1 = Number(parts[2] + parts[1] + parts[0]);
-        parts = b.OrderDate.split('/');
-        const d2 = Number(parts[2] + parts[1] + parts[0]);
-        return d1 - d2;
-    });
-
-    let index = 1;
-    for(let itr of dummyData){
-        let table_index = $("<th></th>").text(`${index++}`);
-        let table_data1 = $("<td></td>").text(`${itr.UserName}`);
-        let table_data2 = $("<td></td>").text(`${itr.OrderNo}`);
-        let table_data3 = $("<td></td>").text(`${itr.OrderDate}`);
-        let table_data4 = $("<td></td>").text(`${itr.OrderStatus}`);
-        let table_data5 = $("<td></td>").text(`${itr.TotalAmount}`);
-        let table_data6 = $("<td></td>").text(`${itr.TotalQty}`);
-        
-        let anchor = $("<a></a>").attr('href','#').text("View/Edit");
-        let table_data7 = $("<td></td>").append(anchor);
-
-        let new_row = $("<tr></tr>").append(table_index, table_data1, table_data2, table_data3, table_data4, table_data5, table_data6, table_data7);
-        $('#detailed-data').append(new_row);
-    }
 }
