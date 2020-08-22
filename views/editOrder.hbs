@@ -1,1 +1,51 @@
-<h1>Edit view</h1>
+<div class="card-deck">
+<div class="card" style="width: 18rem;">
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Order No. :- {{view_order.OrderNo}}</li>
+    <li class="list-group-item">Order Date :- {{view_order.OrderDate}}</li>
+    <li class="list-group-item">Order Status :- {{view_order.OrderStatus}}</li>
+    <li class="list-group-item">Order Quantity :- {{view_order.TotalQty}}</li>
+    <li class="list-group-item">Order Amount :- {{view_order.TotalAmount}}</li>
+  </ul>
+</div>
+
+{{!-- the data is hard coded --}}
+<div class="card" style="width: 18rem;">
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Outlet Code :- DSF23</li>
+    <li class="list-group-item">Outlet Name :- Indigo</li>
+    <li class="list-group-item">Mobile No :- 9234578749</li>
+    <li class="list-group-item">Address :- 123/4555 Delhi</li>
+    <li class="list-group-item">Supplier :- Barista/Sons</li>
+  </ul>
+</div>
+</div>
+
+<br/>
+							
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">ProductName</th>
+      <th scope="col">ProductCode</th>
+      <th scope="col">Category</th>
+      <th scope="col">SubCategory</th>
+      <th scope="col">Brand</th>
+      <th scope="col">MRP</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Amount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>Plastic</td>
+      <td>Mug</td>
+      <td>Ohio</td>
+      <td>234</td>
+      <td>{{view_order.TotalQty}}</td>
+      <td>{{view_order.TotalAmount}}</td>
+    </tr>
+   </tbody>
+</table> 

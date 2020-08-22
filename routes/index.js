@@ -17,7 +17,7 @@ console.log("loading routes");
 
 // request handler for home page
 router.get('/', (req, res) => {
-    console.log(order_data);
+    // console.log(order_data);
 
     res.render('home',{
         data : order_data
@@ -26,7 +26,18 @@ router.get('/', (req, res) => {
 
 // request handler to edit/view order
 router.get('/edit_data', (req, res) => {
-    res.render('editOrder')
+    let order_id = req.query.id;
+    let view_order_data;
+    console.log(order_id);
+    for(let itr of order_data){
+        if(itr.OrderNo == order_id){
+            view_order_data = itr;
+            console.log(view_order_data);
+        }
+    } 
+    res.render('editOrder',{
+        view_order : view_order_data
+    })
 });
 
 
