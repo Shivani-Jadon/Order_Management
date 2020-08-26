@@ -28,6 +28,8 @@ router.get('/', (req, res) => {
 router.get('/edit_data', (req, res) => {
     let order_id = req.query.id;
     let view_order_data;
+
+    // console.log("data : ",req.query.id);
    
     for(let itr of order_data){
         if(itr.OrderNo == order_id){
@@ -39,6 +41,42 @@ router.get('/edit_data', (req, res) => {
         view_order : view_order_data
     })
 });
+
+// route for editing status "Reject"
+router.post('/edit_data/reject', (req, res) => {
+
+    let order_id = req.query.order_id;
+    console.log("order id : ",order_id);
+
+    for(let iterator of order_data){
+        // console.log(iterator);
+        if(iterator.OrderNo == order_id){
+            console.log("found", iterator);
+            iterator.OrderStatus = 'Reject';
+            console.log("edited", iterator);
+        }
+    }
+
+    res.redirect("back");
+})
+
+// route for editing status "Confirm"
+router.post('/edit_data/confirm', (req, res) => {
+
+    let order_id = req.query.order_id;
+    console.log("order id : ",order_id);
+
+    for(let iterator of order_data){
+        // console.log(iterator);
+        if(iterator.OrderNo == order_id){
+            console.log("found", iterator);
+            iterator.OrderStatus = 'Confirm';
+            console.log("edited", iterator);
+        }
+    }
+
+    res.redirect("back");
+})
 
 
 module.exports = router;

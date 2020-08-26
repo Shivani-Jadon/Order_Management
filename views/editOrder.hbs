@@ -54,8 +54,13 @@
 
 
 <div id="btn-cont">
-    <button type="button" class="btn btn-secondary" id="reject-order" onclick="rejectOrder({{view_order.OrderNo}}); return false">Reject</button>
-    <button type="button" class="btn btn-info" id="confirm-order" onclick="confirmOrder({{view_order.OrderNo}}); return false">Confirm</button>
+  <form name="reject_form" action="/edit_data/reject?order_id={{view_order.OrderNo}}" method="POST">
+    <button type="submit" class="btn btn-secondary" id="reject-order">Reject</button>
+  </form>
+
+  <form name="confirm_form" action="/edit_data/confirm?order_id={{view_order.OrderNo}}" method="POST">
+    <button type="submit" class="btn btn-info" id="confirm-order">Confirm</button>
+  </form>    
 </div>
 
 <script>

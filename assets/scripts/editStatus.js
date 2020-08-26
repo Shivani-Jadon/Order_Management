@@ -1,6 +1,8 @@
 {
     console.log("In edit/view script");
     
+    
+    
     function rejectOrder(order_id){
         console.log(order_id);
         // console.log(dummyData);

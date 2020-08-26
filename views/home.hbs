@@ -1,5 +1,5 @@
 {{!-- Row 1 :- date range filter --}}
-<section>
+<section id="date-filter">
     <form id="date=filter" onsubmit="filterDate(); return false">
         <div class="form-group">
             <label for="start-date">Start Date</label>
@@ -16,7 +16,7 @@
 </section>
 
 {{!-- Row2– Detail Order Report --}}
-<section>
+<section id="report-table">
     <h4>Detailed Order Report</h4>
     <table class="table table-hover table-dark">
     <thead>
@@ -42,7 +42,7 @@
                 <td>{{this.OrderStatus}}</td>
                 <td>{{this.TotalAmount}}</td>
                 <td>{{this.TotalQty}}</td>
-                <td><a href="/edit_data?id={{this.OrderNo}}">View/Edit</a></td>
+                <td><a href="/edit_data?id={{this.OrderNo}}&data={{this.data}}">View/Edit</a></td>
             </tr>
             
         {{/each}}
