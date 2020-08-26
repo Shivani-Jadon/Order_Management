@@ -54,6 +54,14 @@ router.post('/edit_data/reject', (req, res) => {
         }
     }
 
+    let modified_data = JSON.stringify(order_data, null, 2);
+
+    // writing data asynchronously
+    fs.writeFile('./data/dummy_data.json', modified_data, (err) => {
+        if (err) throw err;
+        console.log('Data written to file');
+    });
+
     res.redirect("back");
 })
 
@@ -68,6 +76,14 @@ router.post('/edit_data/confirm', (req, res) => {
             iterator.OrderStatus = 'Confirm';
         }
     }
+
+    let modified_data = JSON.stringify(order_data, null, 2);
+
+    // writing data asynchronously
+    fs.writeFile('./data/dummy_data.json', modified_data, (err) => {
+        if (err) throw err;
+        console.log('Data written to file');
+    });
 
     res.redirect("back");
 })

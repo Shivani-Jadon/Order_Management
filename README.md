@@ -9,15 +9,23 @@ Tech Stack - HTML, CSS, JavaScript, NodeJs, Handlebars.js, Charts.js, Bootstrap
 3. Edit status of individual order.
 4. Filter order report based on date.
 5. User can set start date and end date.
+6. Data will be persistent after changes.
+7. Confirm/Reject status order.
 
 ### Order Management View
 
 <img src = "/git_static/order_management.png">
 
+#### Date Filter
+<img src = "/git_static/date_filter.png">
+
 ### Edit/View Order view
 
-<img src = "/git_static/order_edit.png">
+#### Before edit
+<img src = "/git_static/before_edit.png">
 
+#### After edit
+<img src = "/git_static/after_edit.png">
 
 ## How To Install.
 
