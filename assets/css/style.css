@@ -18,9 +18,16 @@ footer{
     bottom: 0;
 }
 
-#date-filter, .card-deck{
+#date-filter, #back-btn{
     margin-top: 15vh;
-    margin-bottom: 5%;
+    margin-bottom: 25px;
+}
+
+#back-btn a{
+    border: 2px #343a40 solid;
+    padding: 0px 5px;
+    font-weight: bold;
+    border-radius: 5px;
 }
 
 #report-table{

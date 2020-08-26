@@ -46,14 +46,11 @@ router.get('/edit_data', (req, res) => {
 router.post('/edit_data/reject', (req, res) => {
 
     let order_id = req.query.order_id;
-    console.log("order id : ",order_id);
 
     for(let iterator of order_data){
         // console.log(iterator);
         if(iterator.OrderNo == order_id){
-            console.log("found", iterator);
             iterator.OrderStatus = 'Reject';
-            console.log("edited", iterator);
         }
     }
 
@@ -64,14 +61,11 @@ router.post('/edit_data/reject', (req, res) => {
 router.post('/edit_data/confirm', (req, res) => {
 
     let order_id = req.query.order_id;
-    console.log("order id : ",order_id);
-
+ 
     for(let iterator of order_data){
         // console.log(iterator);
         if(iterator.OrderNo == order_id){
-            console.log("found", iterator);
             iterator.OrderStatus = 'Confirm';
-            console.log("edited", iterator);
         }
     }
 

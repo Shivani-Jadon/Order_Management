@@ -35,7 +35,7 @@
                         let table_data5 = $("<td></td>").text(`${dummyData[index].TotalAmount}`);
                         let table_data6 = $("<td></td>").text(`${dummyData[index].TotalQty}`);
                         
-                        let anchor = $("<a></a>").attr('href','#').text("View/Edit");
+                        let anchor = $("<a></a>").attr('href',`/edit_data?id=${dummyData[index].OrderNo}`).text("View/Edit");
                         let table_data7 = $("<td></td>").append(anchor);
 
                         let new_row = $("<tr></tr>").append(table_index, table_data1, table_data2, table_data3, table_data4, table_data5, table_data6, table_data7);
@@ -45,8 +45,6 @@
 
         }
 
-        console.log("SD",startDate);
-        console.log("SE",endDate);
     }
 
 }
